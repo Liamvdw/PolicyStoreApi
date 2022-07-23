@@ -35,7 +35,7 @@ namespace PolicyStoreUnitTests
             policy.PolicyNo = "333333333";
 
             //act
-            var result = controller.UpdatePolicy(policy);
+            var result = controller.UpdatePolicy(policyNo, policy);
 
             var expectedResult = controller.GetSinglePolicy(policyNo);
 
@@ -95,7 +95,7 @@ namespace PolicyStoreUnitTests
 
             //act            
             var policy = controller.GetSinglePolicy(policyNo);
-            var result = controller.DeletePolicy(policy);
+            var result = controller.DeletePolicy(policy.PolicyNo);
 
             //assert
             Assert.IsTrue(result.IsSuccessful);
